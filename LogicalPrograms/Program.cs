@@ -10,24 +10,16 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            int sum = 0;
+            int rem = 0, rev=0;
             Console.WriteLine("Enter the number: ");
             int num=Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= num; i++) 
+            while ( num > 0)
             {
-                if (num % i == 0)
-                {
-                    sum++;
-                }
+                rem = num % 10;
+                rev = rev * 10 + rem;
+                num=num/10;
             }
-            if (sum==2)
-            {
-                Console.WriteLine("The number is prime");
-            }
-            else 
-            {
-                Console.WriteLine("The number is not prime");
-            }
+            Console.WriteLine("The reverse number is {0}",rev); 
             Console.ReadLine();
         }
     }
