@@ -10,16 +10,23 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            int a = 0, b = 1, c;
+            int sum = 0;
             Console.WriteLine("Enter the number: ");
             int num=Convert.ToInt32(Console.ReadLine());
-            Console.Write(a + " " + b + " ");
-            for (int i = 2; i < num; i++) 
+            for (int i = 1; i < num; i++) 
             {
-                c = a + b;
-                Console.Write(c + " ");
-                a=b; 
-                b=c;
+                if (num % i == 0)
+                {
+                    sum = sum + i;
+                }
+            }
+            if (sum == num)
+            {
+                Console.WriteLine("The number is perfect number");
+            }
+            else 
+            {
+                Console.WriteLine("The number is not perfect number");
             }
             Console.ReadLine();
         }
