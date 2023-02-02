@@ -13,20 +13,20 @@ namespace LogicalPrograms
             int sum = 0;
             Console.WriteLine("Enter the number: ");
             int num=Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i < num; i++) 
+            for (int i = 1; i <= num; i++) 
             {
                 if (num % i == 0)
                 {
-                    sum = sum + i;
+                    sum++;
                 }
             }
-            if (sum == num)
+            if (sum==2)
             {
-                Console.WriteLine("The number is perfect number");
+                Console.WriteLine("The number is prime");
             }
             else 
             {
-                Console.WriteLine("The number is not perfect number");
+                Console.WriteLine("The number is not prime");
             }
             Console.ReadLine();
         }
