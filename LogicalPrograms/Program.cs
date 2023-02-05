@@ -10,16 +10,33 @@ namespace LogicalPrograms
     {
         static void Main(string[] args)
         {
-            int rem = 0, rev=0;
-            Console.WriteLine("Enter the number: ");
+            Console.WriteLine("Enter the number for N distinct coupon: ");
             int num=Convert.ToInt32(Console.ReadLine());
-            while ( num > 0)
+            int i = 0;
+            int[] coupons= new int[num];
+            Random random= new Random();
+            int generated =0;
+
+            while (i < num)
             {
-                rem = num % 10;
-                rev = rev * 10 + rem;
-                num=num/10;
+                int randomNumber = random.Next(num+1);
+                generated++;
+                Console.WriteLine("Generated random number is:" + randomNumber);
+                if (coupons.Contains(randomNumber))
+                {
+                    continue;
+                }
+                else 
+                {
+                    coupons[i] = randomNumber;
+                }
+                i++; 
             }
-            Console.WriteLine("The reverse number is {0}",rev); 
+            foreach (int coupon in coupons)
+            {
+                Console.Write(coupon + " ");
+            }
+            Console.WriteLine("\n Random numbers needed to generate {0} distinct coupon are:{1}" ,num,generated);
             Console.ReadLine();
         }
     }
